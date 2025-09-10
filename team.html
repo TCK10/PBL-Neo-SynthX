@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Neo SynthX</title>
+
+    <!-- External Links -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- Internal CSS -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+      :root {
+        --main-color: #44ad85;
+        --black: #222;
+        --white: #fff;
+        --light-black: #777;
+        --light-white: #fafffb;
+        --light-bg: #dfebe4;
+        --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        --text-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.3);
+      }
+
+      * {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+
+      html {
+        font-size: 62.5%;
+        overflow-x: hidden;
+      }
+
+      section {
+        padding: 5rem 10%;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: var(--white);
+        box-shadow: var(--box-shadow);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2rem 10%;
+      }
+
+      .header .logo {
+        font-size: 2.5rem;
+        color: var(--black);
+        font-weight: 600;
+      }
+
+      .navbar a {
+        margin-left: 2rem;
+        font-size: 1.7rem;
+        color: var(--black);
+        transition: 0.2s;
+      }
+
+      .navbar a:hover {
+        color: var(--main-color);
+      }
+
+      .heading-title {
+        font-size: 5rem;
+        text-align: center;
+        margin-top: 3rem;
+        color: var(--black);
+      }
+
+      .info-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+        background-color: var(--light-bg);
+        margin-left: 5rem;
+        margin-right: 5rem;
+        padding: 4rem;
+      }
+
+      .info-content {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .info-content h3 {
+        font-size: 3rem;
+        color: var(--main-color);
+        margin-bottom: 1rem;
+      }
+
+      .info-content p {
+        font-size: 1.6rem;
+        color: var(--black);
+        line-height: 2.5rem;
+      }
+
+      .our-team {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        padding: 4rem 10%;
+        background: var(--light-bg);
+      }
+
+      .our-team {
+        display: flex;
+        background: var(--light-bg);
+        padding: 2rem;
+        margin: 1.5rem;
+        justify-content: center;
+        gap: 2rem;
+      }
+
+      .our-team .team .timage {
+        flex: 1 1 41rem;
+        padding: 2rem;
+      }
+
+      .our-team .team .timage img {
+        max-width: 15rem;
+        max-height: 15rem;
+        border-radius: 50%;
+      }
+
+      .our-team .team {
+        background: var(--white);
+        padding: 2rem 3rem;
+        margin: 1.5rem;
+        text-align: center;
+        border-radius: 1.5rem;
+      }
+
+      .our-team .team .teamm h3 {
+        font-size: 3rem;
+        color: var(--black);
+        justify-content: center;
+      }
+
+      .our-team .team .teamm p {
+        font-size: 2.5rem;
+        color: var(--light-black);
+        line-height: 2;
+        padding: 1rem 0;
+        justify-content: center;
+      }
+
+      .footer {
+        background-color: #232b37;
+      }
+
+      .footer .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        gap: 3rem;
+      }
+
+      .footer .box-container .box h3 {
+        color: var(--white);
+        font-size: 2.5rem;
+        padding-bottom: 2rem;
+      }
+
+      .footer .box-container .box a {
+        color: var(--light-white);
+        font-size: 1.5rem;
+        padding-bottom: 1.5rem;
+        display: block;
+      }
+
+      .footer .box-container .box a i {
+        color: var(--main-color);
+        padding-right: 0.5rem;
+        transition: 0.2s linear;
+      }
+
+      .footer .box-container .box a:hover i {
+        padding-right: 2rem;
+      }
+
+      .footer .credit {
+        text-align: center;
+        padding-top: 3rem;
+        margin-top: 3rem;
+        border-top: 0.1rem solid var(--light-white);
+        font-size: 2rem;
+        color: var(--white);
+      }
+
+      .footer .credit span {
+        color: var(--main-color);
+      }
+
+      @media (max-width: 768px) {
+        html {
+          font-size: 55%;
+        }
+
+        .header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .navbar {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          margin-top: 1rem;
+        }
+
+        .navbar a {
+          margin: 1rem 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <section class="header">
+      <a href="main.html" class="logo">Neo SynthX</a>
+      <nav class="navbar">
+        <a href="main.html">Home</a>
+        <a href="product.html">Product</a>
+        <a href="team.html">Team</a>
+      </nav>
+    </section>
+
+    <!-- About Section -->
+    <h1 class="heading-title">About Us</h1>
+    <br /><br />
+    <section class="info-section">
+      <div class="info-content">
+        <h3>Who are we?</h3>
+        <p>
+          Neo SynthX is a passionate team of young innovators dedicated to
+          solving real-world problems using accessible and eco-friendly
+          technology.
+        </p>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <div class="info-content">
+        <h3>Our Mission</h3>
+        <p>
+          To empower schools with efficient, sustainable, and affordable tech
+          solutions that simplify daily processes while reducing environmental
+          impact.
+        </p>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <div class="info-content">
+        <h3>Why It Matters</h3>
+        <p>
+          We believe students can build impactful solutions — reducing waste,
+          saving time, and improving the world around them.
+        </p>
+      </div>
+    </section>
+    <br />
+
+    <!-- Team Section -->
+    <h1 class="heading-title">Our Team</h1>
+    <br /><br />
+    <section class="our-team">
+      <div class="team">
+        <div class="timage">
+          <img src="team1.png" alt="" />
+        </div>
+        <div class="teamm">
+          <h3>Qaseh Azalea</h3>
+          <p>
+            Name: Qaseh Azalea<br />
+            Birthdate: 6/4/2012<br />
+            Hobby: Sketching<br />
+            Status: Founder<br />
+            Experience: 3 years<br />
+          </p>
+        </div>
+      </div>
+
+      <div class="team">
+        <div class="timage">
+          <img src="team2.png" alt="" />
+        </div>
+        <div class="teamm">
+          <h3>Adriana</h3>
+          <p>
+            Name: Nur Adriana<br />
+            Birthdate: 6/2/2012<br />
+            Hobby: Reading Novels<br />
+            Status: Founder<br />
+            Experience: 3 years <br />
+          </p>
+        </div>
+      </div>
+
+      <div class="team">
+        <div class="timage">
+          <img src="team3.png" alt="" />
+        </div>
+        <div class="teamm">
+          <h3>Chee Keong</h3>
+          <p>
+            Name: Tang Chee Keong<br />
+            Birthdate: 10/6/2011<br />
+            Hobby: Coding<br />
+            Status: Founder<br />
+            Experience: 3 years <br />
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3>Quick Links</h3>
+          <a href="main.html"> <i class="fas fa-angle-right"></i> Home</a>
+          <a href="product.html"> <i class="fas fa-angle-right"></i> Product</a>
+          <a href="team.html"> <i class="fas fa-angle-right"></i> Team</a>
+        </div>
+
+        <div class="box">
+          <h3>Contact Info</h3>
+          <a href="#"><i class="fas fa-phone"></i> +60 11-5996-9021</a>
+          <a href="#"><i class="fas fa-phone"></i> +60 17-308-4198</a>
+          <a href="#"><i class="fas fa-phone"></i> +60 10-243-4747</a>
+        </div>
+
+        <div class="box">
+          <h3>Email Us</h3>
+          <a href="#"><i class="fas fa-envelope"></i> adrianaedril@gmail.com</a>
+          <a href="#"><i class="fas fa-envelope"></i> qasehazalea@gmail.com</a>
+          <a href="#"
+            ><i class="fas fa-envelope"></i> tcheekeong1006@gmail.com</a
+          >
+        </div>
+
+        <div class="box">
+          <h3>Follow Us</h3>
+          <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+          <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+          <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+          <a href="#"><i class="fab fa-tiktok"></i> TikTok</a>
+        </div>
+      </div>
+      <div class="credit">
+        Created by <span>Neo SynthX</span> | All rights reserved
+      </div>
+    </section>
+  </body>
+</html>
