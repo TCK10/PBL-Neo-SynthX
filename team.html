@@ -40,8 +40,20 @@
       }
 
       html {
-        font-size: 62.5%;
+        font-size: 60%;
         overflow-x: hidden;
+      }
+
+      html::-webkit-scrollbar {
+        width: 1rem;
+      }
+
+      html::-webkit-scrollbar-track {
+        background-color: var(--white);
+      }
+
+      html::-webkit-scrollbar-thumb {
+        background-color: var(--main-color);
       }
 
       section {
@@ -236,9 +248,9 @@
   <body>
     <!-- Header -->
     <section class="header">
-      <a href="main.html" class="logo">Neo SynthX</a>
+      <a href="index.html" class="logo">Neo SynthX</a>
       <nav class="navbar">
-        <a href="main.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="product.html">Product</a>
         <a href="team.html">Team</a>
       </nav>
@@ -338,7 +350,7 @@
       <div class="box-container">
         <div class="box">
           <h3>Quick Links</h3>
-          <a href="main.html"> <i class="fas fa-angle-right"></i> Home</a>
+          <a href="index.html"> <i class="fas fa-angle-right"></i> Home</a>
           <a href="product.html"> <i class="fas fa-angle-right"></i> Product</a>
           <a href="team.html"> <i class="fas fa-angle-right"></i> Team</a>
         </div>
@@ -368,7 +380,7 @@
         </div>
       </div>
       <div class="credit">
-        Created by <span>Neo SynthX</span> | All rights reserved
+        Created by <span>Neo SynthX</span> | All Rights Reserved
       </div>
     </section>
   </body>
