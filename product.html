@@ -145,14 +145,17 @@
         margin-bottom: 2rem;
       }
 
-      .advertisement-video {
-        width: auto; /* responsive size */
-        max-width: 800px; /* don’t get too big */
-        border-radius: 1.5rem; /* rounded corners */
-        box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25); /* soft shadow */
-        margin: 2rem auto; /* center with space */
-        display: block; /* makes margin auto work */
-        background: var(--light-bg); /* fallback background */
+      .video-container {
+        text-align: center;
+        margin: 2rem 0;
+      }
+
+      .demo-video {
+        width: 80%;
+        max-width: 700px;
+        height: 400px;
+        border-radius: 1.5rem;
+        box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25);
       }
 
       .footer {
@@ -268,10 +271,24 @@
         Watch our promotional video for the Face Recognition Attendance System:
       </p>
       <!-- Replace with YouTube link -->
-      <video class="advertisement-video" controls>
-        <source src="assets/NEOSYNTHX.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <div class="video-container">
+        <!-- YouTube Embed -->
+        <iframe
+          class="demo-video"
+          src="https://www.youtube.com/embed/nm3p4YK0_r4?si=o_EUOYC6Kgg0XxFS"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+
+        <!-- Fallback video (hidden by default) -->
+        <video class="demo-video fallback" controls preload="metadata">
+          <source src="assets/NEOSYNTHX.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </section>
 
     <section class="footer">
@@ -308,5 +325,17 @@
         Created by <span>Neo SynthX</span> | All Rights Reserved
       </div>
     </section>
+
+    <script>
+      // Detect if offline, then swap YouTube with fallback
+      window.addEventListener("load", () => {
+        if (!navigator.onLine) {
+          document.querySelector("iframe.demo-video").style.display = "none";
+          document.querySelector("video.fallback").style.display = "block";
+        } else {
+          document.querySelector("video.fallback").style.display = "none";
+        }
+      });
+    </script>
   </body>
 </html>
