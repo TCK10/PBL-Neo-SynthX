@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
@@ -13,17 +14,19 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
 
       :root {
         --main-color: #44ad85;
         --black: #222;
         --white: #fff;
-        --light-bg: #dfebe4;
+        --light-black: #777;
         --light-white: #fafffb;
+        --light-bg: #dfebe4;
         --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        --text-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.3);
       }
 
       * {
@@ -35,7 +38,7 @@
       }
 
       html {
-        font-size: 65%;
+        font-size: 65%; /* Match home page */
         overflow-x: hidden;
       }
 
@@ -69,14 +72,7 @@
         background: var(--main-color);
       }
 
-      .heading-title {
-        text-align: center;
-        margin-bottom: 2rem;
-        font-size: 3.5rem; /* scaled down */
-        color: var(--black);
-        font-weight: 600;
-      }
-
+      /* Header */
       .header {
         position: sticky;
         top: 0;
@@ -106,40 +102,60 @@
         color: var(--main-color);
       }
 
+      /* Headings */
+      .heading-title {
+        font-size: 4rem; /* More balanced */
+        text-align: center;
+        margin-top: 3rem;
+        color: var(--black);
+      }
+
+      .services .heading-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 3.5rem; /* scaled down */
+        color: var(--black);
+        font-weight: 600;
+      }
+
+      /* INTRO SECTION */
       .home-about {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
+        gap: 3rem;
       }
 
       .home-about .image {
-        flex: 1 1 15rem;
+        flex: 1 1 32rem;
+        display: flex;
+        justify-content: center;
       }
 
       .home-about .image img {
-        width: 75%;
-        border-radius: 35px;
+        width: 80%;
+        border-radius: 2rem;
         box-shadow: var(--box-shadow);
-        margin-top: 3rem;
-        margin-left: 2rem;
       }
 
       .home-about .content {
-        flex: 1 1 35rem;
-        padding: 2rem;
+        flex: 1 1 40rem;
         background: var(--light-bg);
+        padding: 2.5rem;
         border-radius: 1rem;
       }
 
       .home-about .content h3 {
-        font-size: 3rem;
+        font-size: 2.4rem;
+        margin-bottom: 1rem;
       }
 
       .home-about .content p {
-        font-size: 1.7rem;
-        line-height: 1.8;
+        font-size: 1.6rem;
+        line-height: 1.7;
       }
 
+      /* FEATURES */
       .services .box-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
@@ -165,73 +181,111 @@
         color: var(--white);
       }
 
+      /* FOOTER unified with About page */
       .footer {
-        background: #232b37;
-        padding: 3rem 8%;
-        margin-top: 3rem;
+        background-color: #232b37;
+        padding: 4rem 10%;
       }
 
       .footer .box-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        gap: 3rem;
       }
 
       .footer .box h3 {
-        font-size: 1.8rem;
-        margin-bottom: 1.2rem;
         color: var(--white);
+        font-size: 2.2rem;
+        padding-bottom: 1.5rem;
       }
 
       .footer .box a {
-        font-size: 1.3rem;
         color: var(--light-white);
-        margin-bottom: 0.8rem;
+        font-size: 1.5rem;
+        padding-bottom: 1.2rem;
         display: block;
+      }
+
+      .footer .box a i {
+        color: var(--main-color);
+        padding-right: 0.5rem;
+        transition: 0.2s linear;
+      }
+
+      .footer .box a:hover i {
+        padding-right: 1.5rem;
       }
 
       .footer .credit {
         text-align: center;
-        font-size: 1.4rem;
-        margin-top: 2rem;
-        padding-top: 1.5rem;
-        border-top: 0.1rem solid rgba(255, 255, 255, 0.2);
+        padding-top: 3rem;
+        margin-top: 3rem;
+        border-top: 0.1rem solid var(--light-white);
+        font-size: 1.6rem;
         color: var(--white);
       }
+
       .footer .credit span {
         color: var(--main-color);
       }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        html {
+          font-size: 55%;
+        }
+
+        .header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .navbar {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          margin-top: 1rem;
+        }
+
+        .navbar a {
+          margin: 1rem 0;
+        }
+
+        .info-section {
+          width: 95%;
+          padding: 3rem;
+        }
+      }
     </style>
   </head>
+
   <body>
     <!-- Header -->
-    <section class="header">
-      <a href="main.html" class="logo">Neo SynthX</a>
+    <header class="header">
+      <a href="index.html" class="logo">Neo SynthX</a>
       <nav class="navbar">
         <a href="index.html">Home</a>
         <a href="product.html">Product</a>
         <a href="team.html">Team</a>
+        <a href="data.html">Access Logs</a>
       </nav>
-    </section>
+    </header>
 
-    <!-- Hero/About -->
+    <!-- Introduction -->
+    <h1 class="heading-title">Introduction</h1>
     <section class="home-about">
       <div class="image">
-        <img
-          src="assets/facial-recognition.png"
-          alt="Face Recognition Attendance"
-        />
+        <img src="assets/facial-recognition.png" alt="Face Recognition" />
       </div>
+
       <div class="content">
         <h3>Our New Intelligent Security Access System</h3>
-        <br />
         <p>
-          Say goodbye to manual keycards and physical locks! Our system uses
-          <b>Raspberry Pi + Face Recognition and RFID</b> technology to control
-          access securely. Each authorized user’s data is stored in a database —
-          granting or denying entry based on their role (e.g., Worker or CEO).
-          Access results are displayed on an <b>OLED screen</b>, ensuring fast,
-          smart, and secure entry management.
+          Our system uses <b>Face Recognition + RFID + Raspberry Pi</b> to
+          provide secure, automated access control. Each user is assigned a role
+          (Worker, Manager, CEO) and entry is granted or denied based on their
+          permissions. An <b>OLED display</b> shows real-time access status, and
+          all access logs are stored in a central web dashboard.
         </p>
         <a href="product.html" class="btn">Learn More</a>
       </div>
@@ -240,31 +294,36 @@
     <!-- Features -->
     <section class="services">
       <h1 class="heading-title">Key Features</h1>
+
       <div class="box-container">
         <div class="box">
           <img src="assets/AI-powered.png" alt="" />
           <h3>AI Face Recognition</h3>
         </div>
+
         <div class="box">
           <img src="assets/database-icon.png" alt="" />
           <h3>Encrypted Access Database</h3>
         </div>
+
         <div class="box">
           <img src="assets/web-dashboard.png" alt="" />
-          <h3>Web Dashboard & Logging</h3>
+          <h3>Web Dashboard</h3>
         </div>
+
         <div class="box">
           <img src="assets/OLED.png" alt="" />
-          <h3>OLED Display Feedback/h3>
+          <h3>OLED Display Feedback</h3>
         </div>
+
         <div class="box">
           <img src="assets/role-based.png" alt="" />
-          <h3>Role-Based Access Control</h3>
+          <h3>Role-Based Access</h3>
         </div>
+
         <div class="box">
-          <img src="assets/eco-icon.png
-          " alt="" />
-          <h3>Smart & Recycled Design</h3>
+          <img src="assets/eco-icon.png" alt="" />
+          <h3>Eco-Friendly Design</h3>
         </div>
       </div>
     </section>
@@ -274,50 +333,38 @@
       <div class="box-container">
         <div class="box">
           <h3>Quick Links</h3>
-          <a href="main.html"> <i class="fas fa-angle-right"></i> Home</a>
-          <a href="product.html"> <i class="fas fa-angle-right"></i> Product</a>
-          <a href="team.html"> <i class="fas fa-angle-right"></i> Team</a>
+          <a href="main.html"><i class="fas fa-angle-right"></i> Home</a>
+          <a href="product.html"><i class="fas fa-angle-right"></i> Product</a>
+          <a href="team.html"><i class="fas fa-angle-right"></i> Team</a>
+          <a href="data.html"><i class="fas fa-angle-right"></i> Access Logs</a>
         </div>
+
         <div class="box">
-          <h3>Contact Info</h3>
-          <a href="#"> <i class="fas fa-phone"></i> +60 11-5996-9021</a>
-          <a href="#"> <i class="fas fa-phone"></i> +60 17-308-4198</a>
-          <a href="#"> <i class="fas fa-phone"></i> +60 10-243-4747</a>
+          <h3>Contact</h3>
+          <a><i class="fas fa-phone"></i> +60 11-5996-9021</a>
+          <a><i class="fas fa-phone"></i> +60 17-308-4198</a>
+          <a><i class="fas fa-phone"></i> +60 10-243-4747</a>
         </div>
+
         <div class="box">
           <h3>Email Us</h3>
-          <a href="#"><i class="fas fa-envelope"></i> adrianaedril@gmail.com</a>
-          <a href="#"><i class="fas fa-envelope"></i> qasehazalea@gmail.com</a>
-          <a href="#"
-            ><i class="fas fa-envelope"></i> tcheekeong1006@gmail.com</a
-          >
+          <a><i class="fas fa-envelope"></i> adrianaedril@gmail.com</a>
+          <a><i class="fas fa-envelope"></i> qasehazalea@gmail.com</a>
+          <a><i class="fas fa-envelope"></i> tcheekeong1006@gmail.com</a>
         </div>
+
         <div class="box">
-          <h3>Follow Us</h3>
-          <a href="#"> <i class="fab fa-facebook-f"></i> Facebook </a>
-          <a href="#"> <i class="fab fa-twitter"></i> Twitter </a>
-          <a href="#"> <i class="fab fa-instagram"></i> Instagram </a>
-          <a href="#"> <i class="fab fa-tiktok"></i> TikTok </a>
+          <h3>Socials</h3>
+          <a><i class="fab fa-facebook-f"></i> Facebook</a>
+          <a><i class="fab fa-twitter"></i> Twitter</a>
+          <a><i class="fab fa-instagram"></i> Instagram</a>
+          <a><i class="fab fa-tiktok"></i> TikTok</a>
         </div>
       </div>
+
       <div class="credit">
         Created by <span>Neo SynthX</span> | All Rights Reserved
       </div>
     </section>
-
-    <script>
-      let menu = document.querySelector("#menu-btn");
-      let navbar = document.querySelector(".header .navbar");
-
-      menu.onclick = () => {
-        menu.classList.toggle("fa-times");
-        navbar.classList.toggle("active");
-      };
-
-      window.onscroll = () => {
-        menu.classList.remove("fa-times");
-        navbar.classList.remove("active");
-      };
-    </script>
   </body>
 </html>
